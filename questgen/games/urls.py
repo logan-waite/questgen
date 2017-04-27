@@ -1,7 +1,10 @@
 from django.conf.urls import url
+from rest_framework.urlpatterns import format_suffix_patterns
+from . import views
 
-from rest_framework.authtoken import views
-
+app_name = "game"
 urlpatterns = [
-    url(r'^token-auth/', views.obtain_auth_token)
+    url(r'^$', views.GameList.as_view())
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)

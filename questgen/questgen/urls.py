@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from rest_framework.authtoken import views
 
 urlpatterns = [
     url(r'^event/', include("events.urls")),
     url(r'^player/', include("player.urls")),
-    url(r'^api/', include("games.urls")),
+    url(r'^game/', include("games.urls")),
     url(r'^admin/', admin.site.urls),
+    url(r'^token-auth/', views.obtain_auth_token),
 ]

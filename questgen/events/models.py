@@ -1,5 +1,5 @@
 from django.db import models
-from player.models import Meter
+from games.models import Meter
 from pygments.lexers import get_all_lexers
 from pygments.styles import get_all_styles
 
@@ -19,7 +19,7 @@ class Event(models.Model):
     event_type = models.ForeignKey(Event_Type)
     choice = models.BooleanField(default=False)
     story = models.BooleanField(default=False)
-    story_order = models.IntegerField(default=None)
+    story_order = models.IntegerField(null=True)
 
 class Action(models.Model):
     name = models.CharField(max_length=50)

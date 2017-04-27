@@ -1,6 +1,6 @@
 from django.db import models
 
-from player.models import Meter
+from games.models import Meter
 
 # Create your models here.
 class Character_Type(models.Model):
