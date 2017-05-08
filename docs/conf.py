@@ -94,7 +94,7 @@ todo_include_todos = True
 html_theme = 'classic'
 
 # Get the ReadTheDocs theme
-html_style = '/default.css'
+html_style = ''
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
