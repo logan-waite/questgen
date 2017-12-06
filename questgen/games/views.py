@@ -19,17 +19,14 @@ class GameList(APIView):
         pass
 
     def put(self, request, format=None):
-        serializer = GameSerializer(data=request.data)
-        user = request.user
+        data = request.data
+        print(request.user.id)
+        data["user"] = request.user.pk
+        print(data)
+        serializer = GameSerializer(data=data)
+        print(serializer)
         if serializer.is_valid():
-            game = serializer.validated_data
-            game_model = Game(name=game["name"])
-            game_model.user = user
-            game_model.save()
+            serializer.save()
 
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    def perform_create(self, serializer):
-        print("I'm here now!")
-        serializer.save(user=self.request.user)

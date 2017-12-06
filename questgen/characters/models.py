@@ -18,7 +18,7 @@ class Character(models.Model):
         return str(self.name)
 
 class Dialogue(models.Model):
-    player = models.ForeignKey(Character)
+    character = models.ForeignKey(Character)
     content = models.TextField()
 
     def __str__(self):

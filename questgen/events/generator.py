@@ -6,4 +6,23 @@ def generateEvent():
     # if it is a story event, to get the next story event.
     #-------
     # Events are made up of sub-events, ranging in size according to settings
-    # made by the game.
+    # set by the game.
+    #-------
+    # We need to return an object that looks like this:
+    # {
+    #     story: <bool>,
+    #     type: <event_type_id>,
+    #     characters: {
+    #         info: {
+    #             name: <string>
+    #             type: <type_id>
+    #         }
+    #         dialogue: {
+    #             content: <string>
+    #             responses: {
+    #                 <response_id>: <string>,
+    #                 ...
+    #             }
+    #         },
+    #         ...
+    #     }
